@@ -187,4 +187,105 @@ this is first test html
 #+END_SRC
 
 
+* Example 1
+
+
+#+BEGIN_SRC text :noweb yes :tangle "001/test001.txt"
+this is first test text
+#+END_SRC
+
+
+#+BEGIN_SRC css :noweb yes :tangle "001/style.css"
+h1 { /* tag or type selector */
+    font-family: serif;
+}
+
+#page-title { /* id selector */
+    font-family: sans-serif;
+}
+
+.title { /* class selector */
+    font-family: monospace;
+}
+#+END_SRC
+
+#+BEGIN_SRC html :noweb yes :tangle "001/index.html"
+<!doctype html>
+<head>
+  <link href="style.css" rel="stylesheet" type="text/css" media="all">
+  <meta charset="utf-8">
+</head>
+<body>
+  <header class="page-header">
+    <h1 id="page-title" class="title">Wombat Coffee Roasters</h1>
+    <nav>
+      <ul id="main-nav" class="nav">
+	<li><a href="/">Home</a></li>
+	<li><a href="/coffees">Coffees</a></li>
+	<li><a href="/brewers">Brewers</a></li>
+	<li><a href="/specials" class="featured">Specials</a></li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>
+
+#+END_SRC
+
+
+* Example 2
+
+
+
+#+BEGIN_SRC css :noweb yes :tangle "002/style.css"
+h1 {
+  color: #2f4f4f;
+  margin-bottom: 10px; /* reduce margins */
+}
+
+#main-nav {
+  margin-top: 10px;
+  list-style: none; /* removes user agent list styles */
+  padding-left: 0;
+}
+
+#main-nav li {
+  display: inline-block; /* list items side by side instead of stacked */
+}
+
+#main-nav a {  /* button like appearance for navigational links */
+  color: white;
+  background-color: #13a4a4;
+  padding: 5px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+#+END_SRC
+
+#+BEGIN_SRC html :noweb yes :tangle "002/index.html"
+<!doctype html>
+<head>
+  <link href="style.css" rel="stylesheet" type="text/css" media="all">
+  <meta charset="utf-8">
+</head>
+<body>
+  <header class="page-header">
+    <h1 id="page-title" class="title">Wombat Coffee Roasters</h1>
+    <nav>
+      <ul id="main-nav" class="nav">
+	<li><a href="/">Home</a></li>
+	<li><a href="/coffees">Coffees</a></li>
+	<li><a href="/brewers">Brewers</a></li>
+	<li><a href="/specials" class="featured">Specials</a></li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>
+#+END_SRC
+
+
+* Example 3
+
+
 
