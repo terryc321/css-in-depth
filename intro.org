@@ -165,5 +165,26 @@ printf("%f %f %f", r, theta, phi);
   fac n = n * fac (n-1)
 #+END_SRC
 
+This is where the good stuff starts
+
+#+BEGIN_SRC text :noweb yes :tangle test_HelloWorld.txt :exports none
+<<doctest-foo>>
+<<doctest-bar>>
+#+END_SRC
+
+
+
+#+BEGIN_SRC text :noweb yes :tangle "001/test001.txt"
+this is first test text
+#+END_SRC
+
+#+BEGIN_SRC css :noweb yes :tangle "001/test001.css"
+this is first test css
+#+END_SRC
+
+#+BEGIN_SRC html :noweb yes :tangle "001/test001.html"
+this is first test html
+#+END_SRC
+
 
 
