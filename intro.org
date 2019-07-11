@@ -927,13 +927,14 @@ font: 32px Helvetica, Arial, sans-serif;
 
 
 #+BEGIN_SRC css :noweb yes :tangle "011/style.css"
-  body {
-    font-size: 16px;
-  }
+    body {
+      font-size: 16px;
+    }
 
-  .slogan {
-    font-size: 1.2em;
-  }
+    .slogan {
+      font-size: 1.2em;
+      background-color: #ccc;
+    }
 
 #+END_SRC
 
@@ -953,4 +954,113 @@ font: 32px Helvetica, Arial, sans-serif;
   </html>
 #+END_SRC
 
+
+* Chapter 2 - Relative sizing - Example 12
+** font size markup
+
+
+#+BEGIN_SRC css :noweb yes :tangle "012/style.css"
+    :root {
+      font-size: 0.875em;
+    }
+
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .panel {
+      padding: 1em;
+      border: 1px solid #999;
+      border-radius: 0.5em;
+    }
+    .panel > h2 {
+      margin-top: 0;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+#+END_SRC
+
+
+
+#+BEGIN_SRC html :noweb yes :tangle "012/index.html"
+  <!doctype html>
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <meta charset="utf-8">
+  </head>
+  <body>
+  <div class="panel">
+    <h2>Single-origin</h2>
+    <div class="panel-body">
+      We have built partnerships with small farms around the world to
+      hand-select beans at the peak of season. We then carefully roast
+      in <a href="/batch-size.html">small batches</a> to maximize their
+      potential.
+    </div>
+  </div>
+  </body>
+  </html>
+#+END_SRC
+
+
+* Chapter 2 - Relative sizing - Example 13
+** responsive web resizing using @media query
+
+
+#+BEGIN_SRC css :noweb yes :tangle "013/style.css"
+    :root {
+      font-size: 0.75em;
+    }
+    @media (min-width: 800px) {
+      :root {
+        font-size: 0.875em;
+      }
+    }
+    @media (min-width: 1200px) {
+      :root {
+        font-size: 1em;
+      }
+    }
+
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .panel {
+      padding: 1em;
+      border: 1px solid #999;
+      border-radius: 0.5em;
+    }
+    .panel > h2 {
+      margin-top: 0;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+#+END_SRC
+
+
+
+#+BEGIN_SRC html :noweb yes :tangle "013/index.html"
+  <!doctype html>
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <meta charset="utf-8">
+  </head>
+  <body>
+  <div class="panel">
+    <h2>Single-origin</h2>
+    <div class="body">
+      We have built partnerships with small farms around the world to
+      hand-select beans at the peak of season. We then carefully roast
+      in <a href="/batch-size.html">small batches</a> to maximize their
+      potential.
+    </div>
+  </div>
+
+  </body>
+  </html>
+#+END_SRC
 
