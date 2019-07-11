@@ -189,7 +189,7 @@ this is first test html
 
 
 * Example 1
-
+** plain unordered lis
 
 #+BEGIN_SRC text :noweb yes :tangle "001/test001.txt"
 this is first test text
@@ -355,7 +355,7 @@ git checkout HEAD -- intro.org
 
 
 * Example 4
-** 
+** see our specials text under list
 
 
 
@@ -421,7 +421,7 @@ git checkout HEAD -- intro.org
 
 
 * Example 5
-** 
+** using sans serif font
 
 
 #+BEGIN_SRC css :noweb yes :tangle "005/style.css"
@@ -507,7 +507,8 @@ git checkout HEAD -- intro.org
 
 
 * Example 6
-** 
+** nice footer on page
+
 
 
 #+BEGIN_SRC css :noweb yes :tangle "006/style.css"
@@ -609,4 +610,118 @@ git checkout HEAD -- intro.org
   </body>
   </html>
 #+END_SRC
+
+
+
+* Example 7
+** changing title font
+
+
+#+BEGIN_SRC css :noweb yes :tangle "007/style.css"
+h1 {
+font-weight: bold;
+}
+.title {
+font: 32px Helvetica, Arial, sans-serif;
+}
+  body {
+    font-family: sans-serif;
+  }
+
+  a:link {
+    color: blue;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: purple;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a:active {
+    color: red;
+  }
+
+    h1 {
+	color: #2f4f4f;
+	margin-bottom: 10px;
+    }
+
+    .nav {
+	margin-top: 10px;
+	list-style: none;
+	padding-left: 0;
+    }
+
+    .nav li {
+	display: inline-block;
+    }
+
+    .nav a {
+	color: white;
+	background-color: #13a4a4;
+	padding: 5px;
+	border-radius: 2px;
+	text-decoration: none;
+    }
+
+    a.featured {
+	background-color: orange;
+    }
+
+
+.footer {
+  color: #666;
+  background-color: #ccc;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+
+#+END_SRC
+
+
+#+BEGIN_SRC html :noweb yes :tangle "007/index.html"
+  <!doctype html>
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header class="page-header">
+      <h1 id="page-title" class="title">Wombat Coffee Roasters</h1>
+      <nav>
+	<ul id="main-nav" class="nav">
+	  <li><a href="/">Home</a></li>
+	  <li><a href="/coffees">Coffees</a></li>
+	  <li><a href="/brewers">Brewers</a></li>
+	  <li><a href="/specials" class="featured">Specials</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      <p>
+	Be sure to check out
+	<a href="/specials" class="featured">our specials</a>.
+      </p>
+    </main>
+  <footer class="footer">
+    &copy; 2016 Wombat Coffee Roasters &mdash;
+    <a href="/terms-of-use">Terms of use</a>
+  </footer>
+
+  </body>
+  </html>
+#+END_SRC
+
+
 
