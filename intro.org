@@ -840,81 +840,16 @@ font: 32px Helvetica, Arial, sans-serif;
 
 
 
-* Example 9
-** added box shadow 
+
+* Chapter 2 - Relative sizing - Example 9
+** 1em padding all around text 
 
 
 #+BEGIN_SRC css :noweb yes :tangle "009/style.css"
-    h1 {
-	font-weight: bold;
-    }
-    .title {
-	font: 32px Helvetica, Arial, sans-serif;
-    }
-    body {
-	font-family: sans-serif;
-    }
-
-    a:link {
-	color: blue;
-	text-decoration: none;
-    }
-
-    a:visited {
-	color: purple;
-    }
-
-    a:hover {
-	text-decoration: underline;
-    }
-
-    a:active {
-	color: red;
-    }
-
-    h1 {
-	color: #2f4f4f;
-	margin-bottom: 10px;
-    }
-
-    .nav {
-	margin-top: 10px;
-	list-style: none;
-	padding-left: 0;
-    }
-
-    .nav li {
-	display: inline-block;
-    }
-
-    .nav a {
-	color: white;
-	background-color: #13a4a4;
-	padding: 5px 30px;  
-	border-radius: 2px;
-	text-decoration: none;
-    }
-
-    a.featured {
-	background-color: orange;
-	box-shadow: 10px 2px #6f9090; /* box shadow */
-    }
-
-
-    .footer {
-	color: #666;
-	background-color: #ccc;
-	padding: 15px 0;
-	text-align: center;
-	font-size: 14px;
-    }
-
-    .footer a {
-	color: inherit;
-	text-decoration: underline;
-    }
-
-
+  .padded {
+    font-size: 16px;
+    padding: 1em;
+  }
 #+END_SRC
 
 
@@ -926,33 +861,96 @@ font: 32px Helvetica, Arial, sans-serif;
     <meta charset="utf-8">
   </head>
   <body>
-    <header class="page-header">
-      <h1 id="page-title" class="title">Wombat Coffee Roasters</h1>
-      <nav>
-	<ul id="main-nav" class="nav">
-	  <li><a href="/">Home</a></li>
-	  <li><a href="/coffees">Coffees</a></li>
-	  <li><a href="/brewers">Brewers</a></li>
-	  <li><a href="/specials" class="featured">Specials</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      <p>
-	Be sure to check out
-	<a href="/specials" class="featured">our specials</a>.
-      </p>
-    </main>
-  <footer class="footer">
-    &copy; 2016 Wombat Coffee Roasters &mdash;
-    <a href="/terms-of-use">Terms of use</a>
-  </footer>
-
+  <div class="padded">
+    We have built partnerships with small farms around the world to
+    hand-select beans at the peak of season. We then carefully roast in <a href="/batches">small batches</a> to maximize their potential.
+  </div>
   </body>
   </html>
 #+END_SRC
 
 
 
+* Chapter 2 - Relative sizing - Example 10
+** relative sized padding
+
+
+#+BEGIN_SRC css :noweb yes :tangle "010/style.css"
+  .padded {
+    font-size: 16px;
+    padding: 1em;
+  }
+
+  body {
+    margin: 1.5em;
+  }
+
+  .box {
+    padding: 1em;
+    border-radius: 1em;
+    background-color: lightgray;
+  }
+
+  .box-small {
+    font-size: 12px;
+  }
+
+  .box-large {
+    font-size: 18px;
+  }
+
+#+END_SRC
+
+
+
+#+BEGIN_SRC html :noweb yes :tangle "010/index.html"
+  <!doctype html>
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <meta charset="utf-8">
+  </head>
+  <body>
+  <span class="box box-small">Small</span>
+  <span class="box box-large">Large</span>
+  <div class="padded">
+    We have built partnerships with small farms around the world to
+    hand-select beans at the peak of season. We then carefully roast in <a href="/batches">small batches</a> to maximize their potential.
+  </div>
+  </body>
+  </html>
+#+END_SRC
+
+
+
+* Chapter 2 - Relative sizing - Example 11
+** font size markup
+
+
+#+BEGIN_SRC css :noweb yes :tangle "011/style.css"
+  body {
+    font-size: 16px;
+  }
+
+  .slogan {
+    font-size: 1.2em;
+  }
+
+#+END_SRC
+
+
+
+#+BEGIN_SRC html :noweb yes :tangle "011/index.html"
+  <!doctype html>
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <meta charset="utf-8">
+  </head>
+  <body>
+  We love coffee
+  <p class="slogan">We love coffee</p>
+
+  </body>
+  </html>
+#+END_SRC
 
 
