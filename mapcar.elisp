@@ -1,0 +1,4 @@
+(mapcar (lambda (x) (list x (fac x)))  '(1 2 3 4 5 6 7 8 9 10))
+
+;; factorial 1 2 3 
+(mapcar (lambda (x) (list x (fac x)))  '(1 2 3))

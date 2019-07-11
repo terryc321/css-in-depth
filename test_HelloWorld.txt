@@ -1,0 +1,13 @@
+example foo::
+  >>> from HelloWorld import *
+  >>>
+  >>> foo = HelloWorld('foo')
+  >>> foo.say_hello()
+  Hello foo
+
+example bar::
+  >>> from HelloWorld import *
+  >>>
+  >>> bar = HelloWorld('bar')
+  >>> bar.say_hello()
+  Hello bar

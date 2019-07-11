@@ -1,0 +1,169 @@
+CSS IN DEPTH    -*- mode: org; -*-
+
+
+
+https://orgmode.org/org.html#Working-with-Source-Code
+
+
+#+BEGIN_SRC js :noweb yes :tangle 001.js  
+  /*
+  ,*/
+  var a = 1;
+  var b = 2;
+  a + b;
+#+END_SRC
+
+
+
+#+BEGIN_SRC html :noweb yes :tangle 001.html  
+  <html>
+    <head>
+      <meta charset="utf-8">
+    
+    </head>
+    <body>
+    </body>
+  </html>
+#+END_SRC
+
+
+
+#+BEGIN_SRC python :noweb yes :tangle HelloWorld.py :exports none
+"""This is a hello world example document"""
+
+# imports
+import sys
+<<helloworld-main-imports>>
+
+# constants
+
+# exception classes
+
+# interface functions
+
+# classes
+<<HelloWorld-defn>>
+
+# internal functions & classes
+
+<<helloworld-main>>
+
+if __name__ == '__main__':
+    status = main()
+    sys.exit(status)
+#+END_SRC
+
+
+#+BEGIN_SRC text :noweb yes :tangle test_HelloWorld.txt :exports none
+<<doctest-foo>>
+<<doctest-bar>>
+#+END_SRC
+
+
+#+NAME: doctest-foo
+#+BEGIN_SRC rst
+  example foo::
+    >>> from HelloWorld import *
+    >>>
+    >>> foo = HelloWorld('foo')
+    >>> foo.say_hello()
+    Hello foo
+
+#+END_SRC
+
+
+#+NAME: doctest-bar
+#+BEGIN_SRC rst
+  example bar::
+    >>> from HelloWorld import *
+    >>>
+    >>> bar = HelloWorld('bar')
+    >>> bar.say_hello()
+    Hello bar
+
+#+END_SRC
+
+
+
+
+#+HEADERS: :includes <math.h> :flags -lm 
+#+HEADERS: :var x=1.0 :var y=4.0 :var z=10.0
+#+BEGIN_SRC C :exports both :includes '(<math.h> <time.h>) :tangle data.c
+double pi = 4*atan(1);
+double r, theta, phi;
+r = sqrt(x*x+y*y+z*z);
+theta = acos(z/r) * 180.0/pi;
+phi = atan2(y,x) * 180.0/pi;
+printf("%f %f %f", r, theta, phi);
+#+END_SRC
+
+
+
+#+BEGIN_SRC emacs-lisp
+  (defun org-xor (a b)
+     "Exclusive or."
+     (if a (not b) b))
+#+END_SRC
+
+#+RESULTS:
+: org-xor
+
+#+BEGIN_SRC emacs-lisp
+  (org-xor t nil)
+#+END_SRC
+
+#+RESULTS:
+: t
+
+
+
+#+NAME: factorial
+#+BEGIN_SRC emacs-lisp :exports both :file "fac.el" :dir "/home/terry/website/css/css-in-depth/001" :var n=0 
+    (defun fac (n)
+      (if (< n 3)
+	  n
+	(* n (fac (- n 1)))))
+#+END_SRC
+
+#+RESULTS:
+: fac
+
+#+BEGIN_SRC emacs-lisp
+  (fac 5)
+#+END_SRC
+
+#+RESULTS:
+: 120
+
+#+BEGIN_SRC emacs-lisp :exports both :tangle mapcar.elisp
+  (mapcar (lambda (x) (list x (fac x)))  '(1 2 3 4 5 6 7 8 9 10))
+#+END_SRC
+
+
+#+RESULTS:
+|  1 |       1 |
+|  2 |       2 |
+|  3 |       6 |
+|  4 |      24 |
+|  5 |     120 |
+|  6 |     720 |
+|  7 |    5040 |
+|  8 |   40320 |
+|  9 |  362880 |
+| 10 | 3628800 |
+
+#+BEGIN_SRC emacs-lisp :exports both :tangle mapcar.elisp
+  ;; factorial 1 2 3 
+  (mapcar (lambda (x) (list x (fac x)))  '(1 2 3))
+
+#+END_SRC
+
+
+#+NAME: factorial
+#+BEGIN_SRC haskell :results silent :exports code :var n=0
+  fac 0 = 1
+  fac n = n * fac (n-1)
+#+END_SRC
+
+
+
