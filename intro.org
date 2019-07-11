@@ -1064,3 +1064,103 @@ font: 32px Helvetica, Arial, sans-serif;
   </html>
 #+END_SRC
 
+
+
+* Chapter 2 - Relative sizing - Example 14
+** different coloured backgrounds
+
+
+#+BEGIN_SRC css :noweb yes :tangle "014/style.css"
+	 :root {
+	   font-size: 0.75em;
+	 }
+	 @media (min-width: 800px) {
+	   :root {
+	     font-size: 0.875em;
+	   }
+	 }
+	 @media (min-width: 1200px) {
+	   :root {
+	     font-size: 1em;
+	   }
+	 }
+
+	 body {
+	   font-family: Helvetica, Arial, sans-serif;
+	 }
+
+	 .panel {
+	   font-size: 1rem;
+	   padding: 1em;
+	   border: 1px solid #999;
+	   border-radius: 0.5em;
+
+	 }
+
+	 .panel > h2 {
+	   margin-top: 0;
+	   font-size: 0.8em;
+	   font-weight: bold;
+	   text-transform: uppercase;
+	   background-color: aquamarine;
+	 }
+
+	 .panel.small {
+	     background-color: blue;
+	 }
+
+	 .panel.large {
+	   font-size: 1.2em;
+	  background-color: bisque;
+	 }
+#+END_SRC
+
+#+BEGIN_SRC js :noweb yes :tangle "014/a.js"
+function a(){
+  var rootElement = document.documentElement;
+  var styles = getComputedStyle(rootElement);
+  var mainColor = styles.getPropertyValue('--main-bg');
+  console.log(String(mainColor).trim());
+  var rootElement = document.documentElement;
+  rootElement.style.setProperty('--main-bg', '#cdf');
+}
+
+#+END_SRC
+
+
+
+
+
+#+BEGIN_SRC html :noweb yes :tangle "014/index.html"
+    <!doctype html>
+    <head>
+      <link href="style.css" rel="stylesheet" type="text/css" media="all">
+      <meta charset="utf-8">
+      <script type="text/javascript" charset="utf-8" src="a.js"></script>
+
+    </head>
+    <body onload=a() >
+      <div class="panel small">
+	<h2>Single-origin</h2>
+	<div class="body">
+	  We have built partnerships with small farms around the world to
+	  hand-select beans at the peak of season. We then carefully roast
+	  in <a href="/batch-size.html">small batches</a> to maximize their
+	  potential.
+	</div>
+      </div>
+      <div class="panel large">
+	<h2>Single-origin</h2>
+	<div class="body">
+	  We have built partnerships with small farms around the world to
+	  hand-select beans at the peak of season. We then carefully roast
+	  in <a href="/batch-size.html">small batches</a> to maximize their
+	  potential.
+	</div>
+      </div>
+    </body>
+    </html>
+#+END_SRC
+
+
+
