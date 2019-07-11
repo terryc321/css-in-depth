@@ -614,7 +614,7 @@ git checkout HEAD -- intro.org
 
 
 * Example 7
-** changing title font
+** added extreme padding on button to make them look better
 
 
 #+BEGIN_SRC css :noweb yes :tangle "007/style.css"
@@ -663,7 +663,7 @@ font: 32px Helvetica, Arial, sans-serif;
     .nav a {
 	color: white;
 	background-color: #13a4a4;
-	padding: 5px;
+	padding: 5px 30px;  /* extra padding to make it obvious*/
 	border-radius: 2px;
 	text-decoration: none;
     }
@@ -722,6 +722,237 @@ font: 32px Helvetica, Arial, sans-serif;
   </body>
   </html>
 #+END_SRC
+
+
+
+
+* Example 8
+** added box shadow 
+
+
+#+BEGIN_SRC css :noweb yes :tangle "008/style.css"
+    h1 {
+	font-weight: bold;
+    }
+    .title {
+	font: 32px Helvetica, Arial, sans-serif;
+    }
+    body {
+	font-family: sans-serif;
+    }
+
+    a:link {
+	color: blue;
+	text-decoration: none;
+    }
+
+    a:visited {
+	color: purple;
+    }
+
+    a:hover {
+	text-decoration: underline;
+    }
+
+    a:active {
+	color: red;
+    }
+
+    h1 {
+	color: #2f4f4f;
+	margin-bottom: 10px;
+    }
+
+    .nav {
+	margin-top: 10px;
+	list-style: none;
+	padding-left: 0;
+    }
+
+    .nav li {
+	display: inline-block;
+    }
+
+    .nav a {
+	color: white;
+	background-color: #13a4a4;
+	padding: 5px 30px;  
+	border-radius: 2px;
+	text-decoration: none;
+    }
+
+    a.featured {
+	background-color: orange;
+	box-shadow: 10px 2px #6f9090; /* box shadow */
+    }
+
+
+    .footer {
+	color: #666;
+	background-color: #ccc;
+	padding: 15px 0;
+	text-align: center;
+	font-size: 14px;
+    }
+
+    .footer a {
+	color: inherit;
+	text-decoration: underline;
+    }
+
+
+#+END_SRC
+
+
+
+#+BEGIN_SRC html :noweb yes :tangle "008/index.html"
+  <!doctype html>
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header class="page-header">
+      <h1 id="page-title" class="title">Wombat Coffee Roasters</h1>
+      <nav>
+	<ul id="main-nav" class="nav">
+	  <li><a href="/">Home</a></li>
+	  <li><a href="/coffees">Coffees</a></li>
+	  <li><a href="/brewers">Brewers</a></li>
+	  <li><a href="/specials" class="featured">Specials</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      <p>
+	Be sure to check out
+	<a href="/specials" class="featured">our specials</a>.
+      </p>
+    </main>
+  <footer class="footer">
+    &copy; 2016 Wombat Coffee Roasters &mdash;
+    <a href="/terms-of-use">Terms of use</a>
+  </footer>
+
+  </body>
+  </html>
+#+END_SRC
+
+
+
+* Example 9
+** added box shadow 
+
+
+#+BEGIN_SRC css :noweb yes :tangle "009/style.css"
+    h1 {
+	font-weight: bold;
+    }
+    .title {
+	font: 32px Helvetica, Arial, sans-serif;
+    }
+    body {
+	font-family: sans-serif;
+    }
+
+    a:link {
+	color: blue;
+	text-decoration: none;
+    }
+
+    a:visited {
+	color: purple;
+    }
+
+    a:hover {
+	text-decoration: underline;
+    }
+
+    a:active {
+	color: red;
+    }
+
+    h1 {
+	color: #2f4f4f;
+	margin-bottom: 10px;
+    }
+
+    .nav {
+	margin-top: 10px;
+	list-style: none;
+	padding-left: 0;
+    }
+
+    .nav li {
+	display: inline-block;
+    }
+
+    .nav a {
+	color: white;
+	background-color: #13a4a4;
+	padding: 5px 30px;  
+	border-radius: 2px;
+	text-decoration: none;
+    }
+
+    a.featured {
+	background-color: orange;
+	box-shadow: 10px 2px #6f9090; /* box shadow */
+    }
+
+
+    .footer {
+	color: #666;
+	background-color: #ccc;
+	padding: 15px 0;
+	text-align: center;
+	font-size: 14px;
+    }
+
+    .footer a {
+	color: inherit;
+	text-decoration: underline;
+    }
+
+
+#+END_SRC
+
+
+
+#+BEGIN_SRC html :noweb yes :tangle "009/index.html"
+  <!doctype html>
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header class="page-header">
+      <h1 id="page-title" class="title">Wombat Coffee Roasters</h1>
+      <nav>
+	<ul id="main-nav" class="nav">
+	  <li><a href="/">Home</a></li>
+	  <li><a href="/coffees">Coffees</a></li>
+	  <li><a href="/brewers">Brewers</a></li>
+	  <li><a href="/specials" class="featured">Specials</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      <p>
+	Be sure to check out
+	<a href="/specials" class="featured">our specials</a>.
+      </p>
+    </main>
+  <footer class="footer">
+    &copy; 2016 Wombat Coffee Roasters &mdash;
+    <a href="/terms-of-use">Terms of use</a>
+  </footer>
+
+  </body>
+  </html>
+#+END_SRC
+
+
 
 
 
